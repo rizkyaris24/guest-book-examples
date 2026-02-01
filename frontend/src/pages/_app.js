@@ -19,7 +19,12 @@ import { wagmiAdapter, web3Modal } from '@/wallets/web3modal';
 
  
 const walletSelectorConfig = {
-  network: NetworkId,
+  network: {
+    networkId: NetworkId,
+    nodeUrl: "https://rpc.testnet.fastnear.com",
+    helperUrl: "https://helper.testnet.near.org",
+    explorerUrl: "https://explorer.testnet.near.org",
+  },
   createAccessKeyFor: GuestbookNearContract,
   modules: [
     setupEthereumWallets({ wagmiConfig: wagmiAdapter.wagmiConfig, web3Modal }),
